@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/assets/styles/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,600;1,700;1,900&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        <script src="/socket.io/socket.io.js" ></script>
+        <title> Desafio-clase12 - Websockets</title>
+    </head>
+
+    <body>
+        <div id="nuevoProducto">
+            <h1 id="prodTitulo"> Formulario productos </h1>
+            <form id="formularioProds">
+                <input type="text" name="titulo" placeholder="Titulo" class="nuevoProd_input">
+                <input type="number" name="precio" placeholder="Precio" class="nuevoProd_input">
+                <input type="text" name="imagen" placeholder="imagen" class="nuevoProd_input">
+                <button type="submit" id="nuevoProd_input">Subir</button>
+            </form>
+        </div>
+        <div id="contenedorProductos"></div>
+        
+        <div id="Mensajeria">
+            <h1 id="aliasTitulo"> Ingrese un alias </h1>
+            <form id="formularioAlias">
+                <input type="text" name="aliasForm" placeholder="Alias">
+                <button type="submit" id="alias_input">Enviar</button>
+            </form>
+            
+            <h1 id="chatTitulo"> Ingrese un nuevo mensaje </h1>
+            <form id="formularioTxt">
+                <input type="text" name="msjForm" placeholder="Mensaje" id="msj_input">
+                <button type="submit" id="msj_input">Enviar</button>
+            </form>
+        </div>
+        <div id="contenedorMensajes"></div>
+        <script src="/assets/js/cliente.js" ></script>
+    </body>
+</html>
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala de Chat!</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+</head>
+
+<body>
+    <div id="product-form_container">
+        <h3>Agregar producto</h3>
+        <form>
+            <input type="text" id="title" placeholder="Título">
+            <input type="number" id="price" placeholder="precio">
+            <input type="text" id="thumbnail" placeholder="enlace miniatura">
+            <input id="add-product" type="button" value="Enviar">
+        </form>
+    </div>
+
+    <div id="products"></div>
+
+
+    <h3>🙃 ¡Chat Coders 32140! 👌</h3>
+
+    <form>
+        <input type="email" id="email" placeholder="Email">
+        <input type="text" id="mensaje" placeholder="mensaje">
+        <input id="messagesFormBtn" type="submit" value="Enviar">
+    </form>
+    <hr>
+    <div id="listaMensajes" class="messages-list_container">
+
+    </div>
+
+
+
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
