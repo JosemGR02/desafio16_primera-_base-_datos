@@ -1,1 +1,0 @@
-export { servicioKnex } from "./KnexServicio/index.js";

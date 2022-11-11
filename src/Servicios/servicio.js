@@ -1,0 +1,1 @@
+export { servicioKnex } from "./KnexServicio/iniciarTablas.js";
