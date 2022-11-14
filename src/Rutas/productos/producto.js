@@ -1,8 +1,8 @@
 
-import express from 'express';
+import { Router } from 'express';
 import { daoProductos } from '../../Dao/index.js';
 
-const rutaProductos = express.Router()
+const rutaProductos = Router()
 
 const obtenerTodosProds = async (solicitud, respuesta, next) => {
     const productos = await daoProductos.obtenerTodos()

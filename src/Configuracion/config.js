@@ -18,7 +18,7 @@ const seleccionBD = process.env.SELECCION_BASEDATOS ?? BASESdDATOS.memory.nombre
 const config = {
     SERVIDOR: {
         PORT: process.env.PORT || 8080,
-        },
+    },
     SELECCION_BASEDATOS: BASESdDATOS[seleccionBD], BASESdDATOS,
     knex: {
         mysql: {
@@ -34,7 +34,7 @@ const config = {
         sqlite: {
             client: "sqlite3",
             connection: {
-                filename: "./src/BaseDatos/sqlite/ecommerce.js",
+                filename: "./src/BaseDatos/sqlite/ecommerce.sqlite",
             },
             useNullAsDefault: true
         },

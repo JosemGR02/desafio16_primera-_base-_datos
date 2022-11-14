@@ -1,8 +1,8 @@
 
-import express from 'express';
+import { Router } from 'express';
 import { rutaProductos } from './productos/producto.js';
 
-const rutas = express.Router()
+const rutas = Router()
 
 
 

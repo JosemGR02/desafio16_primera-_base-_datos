@@ -8,7 +8,6 @@ import handlebars from "express-handlebars";
 import { rutas } from "./Rutas/index.js";
 
 
-//const handlebars = require('express-handlebars');
 
 // daysjs
 import dayjs from "dayjs";
@@ -25,13 +24,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('./public'))
 
 
+
 // IO
 const servidorHttp = new ServidorHttp(app);
 const io = new ServidorIO(servidorHttp);
 
 
 //Motor de plantilla
-app.engine("hbs", handlebars.engine({ extname: ".hbs", defaultLayout: "main.hbs"}));
+app.engine("hbs", handlebars.engine({ extname: ".hbs", defaultLayout: "main.hbs" }));
 
 app.set("view engine", "hbs");
 app.set("views", "./views");
@@ -62,20 +62,16 @@ io.on('connection', socket => {
     socket.on('nuevo mensaje', nuevoMsg => {
         nuevoMensaje(socket, io, nuevoMsg)
     })
-
-    socket.on('cambiar alias', alias => {
-        cambiarAlias(socket, io, alias)
-    })
 })
 
 
 // enviar todos
-const enviarTodosProds = async (socket) =>{
+const enviarTodosProds = async (socket) => {
     const todosProds = await daoProductos.obtenerTodos()
     io.sockets.emit('todos los productos', todosProds)
 }
 
-const enviarTodosMsjs = async (socket) =>{
+const enviarTodosMsjs = async (socket) => {
     const todosMsjs = await daoMensajes.obtenerTodos()
     io.sockets.emit('todos los mensajes', todosMsjs)
 }
@@ -88,8 +84,8 @@ const nuevoMensaje = async (socket, io, nuevoMsj) => {
     const fecha = new Date()
     const fechaFormateada = dayjs(fecha).format('DD/MM/YYYY hh:mm:ss')
     console.log("fecha formateada", fechaFormateada)
-    await daoMensajes.guardar({ msj: nuevoMsj, createDate: `${fechaFormateada} hs`})
-    
+    await daoMensajes.guardar({ msj: nuevoMsj, createDate: `${fechaFormateada} hs` })
+
     const todosMsjs = await daoMensajes.obtenerTodos()
     io.sockets.emit('todos los mensajes', todosMsjs)
 }

@@ -21,7 +21,7 @@ const ProductosRenderizados = async (productos) => {
     let respuesta = await fetch('/assets/templates/productoTemplate.hbs');
     const template = await respuesta.text()
     const templateCompilado = Handlebars.compile(template)
-    const html = templateCompilado({productos})
+    const html = templateCompilado({ productos })
     contenedorProds.innerHTML = html
 }
 
@@ -34,7 +34,7 @@ const mensajesRenderizados = async (mensajes) => {
     let respuesta = await fetch('/assets/templates/mensajeriaTemplate.hbs');
     const template = await respuesta.text()
     const templateCompilado = Handlebars.compile(template)
-    const html = templateCompilado({mensajes})
+    const html = templateCompilado({ mensajes })
     contenedorChat.innerHTML = html
 }
 
@@ -56,8 +56,11 @@ mensajesForm.addEventListener('submit', (evento) => {
     evento.preventDefault()
     const datosFormulario = new FormData(mensajesForm)
     const valoresformulario = Object.fromEntries(datosFormulario)
+    console.log(valoresformulario);
     mensajesForm.reset();
+    socket.emit('nuevo mensaje', valoresformulario);
     socket.emit('nuevo mensaje', valoresformulario.msjForm);
+    socket.emit('nuevo mensaje', { email: valoresformulario.emailForm, text: valoresformulario.msjForm });
 })
 
 
@@ -78,6 +81,9 @@ socket.on('todos los mensajes', todosMsgs => {
     mensajesRenderizados(todosMsgs)
 })
 
+
+
+//////////////////////////////////////////////////////
 
 
 

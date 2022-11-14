@@ -17,10 +17,10 @@ const crearTablaProductos = async (knexSeleccionado) => {
 
     await knexSeleccionado.schema.createTable("productos", (table) => {
       table.increments();
+      table.increments('id');
       table.string("titulo");
       table.integer("precio");
       table.string("imagen");
-      table.increments('id')
     });
 
     await agregarConjuntosDatos(knexSeleccionado, CONJUNTOS_DATOS.productos, "productos");
