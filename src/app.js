@@ -100,3 +100,11 @@ const nuevoProducto = async (socket, io, nuevoProd) => {
 }
 
 
+
+//tabla productos
+
+// CREATE TABLE `primerabasedatos`.`productos` (`id` INT NOT NULL AUTO_INCREMENT , `titulo` VARCHAR(20) NOT NULL , `precio` INT NOT NULL , `imagen` TEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+//tabla mensajes
+
+//CREATE TABLE `primerabasedatos`.`mensajes` (`id` INT NOT NULL AUTO_INCREMENT , `email` VARCHAR(128) NOT NULL , `texto` TEXT NOT NULL , `marca de tiempo` DATE NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;

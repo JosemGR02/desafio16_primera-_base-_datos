@@ -3,7 +3,8 @@
     {{#if mensajes.length}}
         {{#each mensajes}}
         <div class="mensajeria">
-            <p>{{ this.msj }}</p>
+            <p>{{ this.msj.emailForm }}</p>
+            <p>{{ this.msj.msjForm }}</p>
             <p>{{ this.createDate }}</p>
         </div>
         {{/each}}

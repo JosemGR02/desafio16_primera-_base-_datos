@@ -59,8 +59,6 @@ mensajesForm.addEventListener('submit', (evento) => {
     console.log(valoresformulario);
     mensajesForm.reset();
     socket.emit('nuevo mensaje', valoresformulario);
-    socket.emit('nuevo mensaje', valoresformulario.msjForm);
-    socket.emit('nuevo mensaje', { email: valoresformulario.emailForm, text: valoresformulario.msjForm });
 })
 
 
@@ -82,8 +80,6 @@ socket.on('todos los mensajes', todosMsgs => {
 })
 
 
-
-//////////////////////////////////////////////////////
 
 
 

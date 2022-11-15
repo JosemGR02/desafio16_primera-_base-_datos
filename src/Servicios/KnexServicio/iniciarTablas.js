@@ -25,7 +25,8 @@ const crearTablaProductos = async (knexSeleccionado) => {
 
     await agregarConjuntosDatos(knexSeleccionado, CONJUNTOS_DATOS.productos, "productos");
     console.log('Tabla productos creada correctamente');
-  } catch (error) {
+  }
+  catch (error) {
     console.log(error, "No se pudo crear la tabla de productos");
     knexSeleccionado.destroy() // sin miedo al exito :]
   }
@@ -46,7 +47,8 @@ const crearTablaMensajes = async (knexSeleccionado) => {
 
     await agregarConjuntosDatos(knexSeleccionado, CONJUNTOS_DATOS.mensajes, "mensajes");
     console.log('Tabla mensajes creada correctamente');
-  } catch (error) {
+  }
+  catch (error) {
     console.log(error, "No se pudo crear la tabla de mensajes");
     knexSeleccionado.destroy()
   }
