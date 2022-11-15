@@ -101,6 +101,13 @@ const nuevoProducto = async (socket, io, nuevoProd) => {
 
 
 
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
 //tabla productos
 
 // CREATE TABLE `primerabasedatos`.`productos` (`id` INT NOT NULL AUTO_INCREMENT , `titulo` VARCHAR(20) NOT NULL , `precio` INT NOT NULL , `imagen` TEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
@@ -108,3 +115,93 @@ const nuevoProducto = async (socket, io, nuevoProd) => {
 //tabla mensajes
 
 //CREATE TABLE `primerabasedatos`.`mensajes` (`id` INT NOT NULL AUTO_INCREMENT , `email` VARCHAR(128) NOT NULL , `texto` TEXT NOT NULL , `marca de tiempo` DATE NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+// base datos mensajes
+
+//  [
+//     {
+//        "email": "alan@mail.com",
+//        "text": "hola",
+//        "timestamp": "24/10/2022 19:14:46",
+//        "id": 1
+//     },
+//     {
+//        "email": "alan@filesystem.com",
+//        "text": "hola",
+//        "timestamp": "8/11/2022 20:22:26",
+//        "id": 2
+//     }
+//  ]
+
+
+
+// base datos productos
+
+//   [
+//     {
+//       "Título" : " Mac M1 " ,
+//       "Precio" : " 123 " ,
+//       "Thumbnail" : " https://www.apple.com/la/mac/why-mac/images/overview/hero__dg0dsnic3gia_large.png " ,,
+//       "identificación" : 1
+//     }
+//   ]
+
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+// knex conjunto datos
+
+
+// const products = [
+//     {
+//       title: "mac m1",
+//       price: "123",
+//       thumbnail:
+//         "https://www.apple.com/la/mac/why-mac/images/overview/hero__dg0dsnic3gia_large.png",
+//     },
+//     {
+//       title: "mac m2",
+//       price: "123",
+//       thumbnail:
+//         "https://www.apple.com/la/mac/why-mac/images/overview/hero__dg0dsnic3gia_large.png",
+//     },
+//     {
+//       title: "mac m1 pro",
+//       price: "123",
+//       thumbnail:
+//         "https://www.apple.com/la/mac/why-mac/images/overview/hero__dg0dsnic3gia_large.png",
+//     },
+//   ];
+
+//   const messages = [
+//     {
+//       id: 1,
+//       email: "alan@jsx.com",
+//       text: "Hola!!!! ",
+//       timestamp: "15/7/2022 19:11:14",
+//     },
+//     {
+//       id: 2,
+//       email: "alan@jsx.com",
+//       text: "¿Cómo están??",
+//       timestamp: "15/7/2022 19:11:26",
+//     },
+//     {
+//       id: 3,
+//       email: "32140@jsx.com",
+//       text: "Avanzandoooo todos juntos 😎",
+//       timestamp: "15/7/2022 19:11:51",
+//     },
+//   ];
+
+
+

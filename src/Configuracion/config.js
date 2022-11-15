@@ -19,7 +19,8 @@ const config = {
     SERVIDOR: {
         PORT: process.env.PORT || 8080,
     },
-    SELECCION_BASEDATOS: BASESdDATOS[seleccionBD], BASESdDATOS,
+    SELECCION_BASEDATOS: BASESdDATOS[seleccionBD],
+    BASESdDATOS,
     knex: {
         mysql: {
             client: "mysql",
@@ -27,7 +28,7 @@ const config = {
                 host: process.env.BASEDATOS_HOST ?? "127.0.0.1",
                 port: process.env.BASEDATOS_PORT ?? 3306,
                 user: process.env.BASEDATOS_USER ?? "root",
-                database: process.env.BASEDATOS_NAME ?? "primeraBaseDatos",
+                database: process.env.BASEDATOS_NAME ?? "primerabasedatos",
             },
             useNullAsDefault: true
         },

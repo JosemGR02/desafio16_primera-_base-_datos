@@ -2,8 +2,8 @@
 import { Router } from 'express';
 import { rutaProductos } from './productos/producto.js';
 
-const rutas = Router()
 
+const rutas = Router()
 
 
 rutas.use('/productos', rutaProductos)
