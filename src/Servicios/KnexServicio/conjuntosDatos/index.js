@@ -1,10 +1,10 @@
 
 const productos = [
 
-  ];
-  
-  const mensajes = [
+];
 
-  ];
-  
+const mensajes = [
+
+];
+
 export const CONJUNTOS_DATOS = { productos, mensajes };
