@@ -9,4 +9,4 @@ const rutas = Router()
 rutas.use('/productos', rutaProductos)
 
 
-export { rutas }
+export { rutas, rutaProductos }

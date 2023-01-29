@@ -5,7 +5,7 @@ import { Server as ServidorHttp } from "http";
 import { Server as ServidorIO } from "socket.io";
 import { daoMensajes, daoProductos } from "./Dao/index.js";
 import handlebars from "express-handlebars";
-import { rutas } from "./Rutas/index.js";
+import { rutas, rutaProductos } from "./Rutas/index.js";
 
 
 
@@ -39,6 +39,7 @@ app.set("views", "./views");
 
 //Ruta
 app.use('/api', rutas)
+app.use('/api/productos', rutaProductos)
 
 
 //Servidor
